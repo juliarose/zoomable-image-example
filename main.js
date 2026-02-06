@@ -13,7 +13,7 @@ window.addEventListener("DOMContentLoaded", () => {
 			type:"zoomifytileservice",
 			width: 2000,
 			height: 1332,
-			tilesUrl: "IMG_7881/",
+			tilesUrl: "image/",
 		}],
 		maxZoomLevel: 100,
 		maxZoomPixelRatio: 1,
