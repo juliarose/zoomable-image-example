@@ -16,6 +16,21 @@ Large images must be served as tiles to avoid GPU/texture limits at high zoom. C
 
 When you open the site, OpenSeadragon will load only the tiles it needs at each zoom level, keeping memory and GPU usage within limits.
 
+## Installing libvips
+
+### Debian
+```bash
+sudo apt install libvips libvips-tools
+```
+
+## libvips Deep Zoom command
+
+Using [libvips](https://libvips.github.io/libvips/), run this command to create a Deep Zoom pyramid from a large JPG:
+
+```bash 
+vips dzsave public/IMG_7881.jpg public/tiles/IMG_7881 --suffix .jpg
+```
+
 ## License
 
 [MIT](https://github.com/juliarose/zoomable-image-example/tree/main/LICENSE)
