@@ -10,8 +10,8 @@ Large images must be served as tiles to avoid GPU/texture limits at high zoom. C
 
 1. Generate a Deep Zoom image (`.dzi` + tiles) from your JPG using a tiling tool such as libvips or a Deep Zoom converter.
 2. Put the generated files in:
-	- `public/tiles/IMG_7881.dzi`
-	- `public/tiles/IMG_7881_files/` (tile folder created by the tool)
+	- `public/tiles/image.dzi`
+	- `public/tiles/image_files/` (tile folder created by the tool)
 3. Ensure `main.js` points to the `.dzi` file as the tile source.
 
 ## Installing libvips
@@ -31,7 +31,7 @@ winget install --id=libvips.libvips -e
 Using [libvips](https://libvips.github.io/libvips/), run this command to create a Deep Zoom tiles from a large JPG:
 
 ```bash 
-vips dzsave public/IMG_7881.jpg public/IMG_7881 --suffix ".jpg[Q=95]" --layout zoomify
+vips dzsave public/image.jpg public/image --suffix ".jpg[Q=95]" --layout zoomify
 ```
 
 ## License
