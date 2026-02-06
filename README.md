@@ -4,6 +4,18 @@ Example static zoomable image site using [OpenSeadragon](https://github.com/open
 
 View it live <https://juliarose.github.io/zoomable-image-example/>.
 
+## Using a large JPG (Deep Zoom)
+
+Large images must be served as tiles to avoid GPU/texture limits at high zoom. Convert your JPG to a Deep Zoom pyramid and place the outputs in the public folder so Vite can serve them.
+
+1. Generate a Deep Zoom image (`.dzi` + tiles) from your JPG using a tiling tool such as libvips or a Deep Zoom converter.
+2. Put the generated files in:
+	- `public/tiles/IMG_7881.dzi`
+	- `public/tiles/IMG_7881_files/` (tile folder created by the tool)
+3. Ensure `main.js` points to the `.dzi` file as the tile source (already updated).
+
+When you open the site, OpenSeadragon will load only the tiles it needs at each zoom level, keeping memory and GPU usage within limits.
+
 ## License
 
 [MIT](https://github.com/juliarose/zoomable-image-example/tree/main/LICENSE)

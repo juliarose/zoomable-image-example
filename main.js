@@ -10,8 +10,8 @@ window.addEventListener("DOMContentLoaded", () => {
 		id: "openseadragon1",
 		prefixUrl,
 		tileSources: {
-			type: "image",
-			url: "IMG_7881.jpg",
+			type: "dzi",
+			url: "/tiles/IMG_7881.dzi",
 		},
 		minZoomLevel: 0.5,
 		maxZoomLevel: 20,
