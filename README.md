@@ -21,12 +21,17 @@ Large images must be served as tiles to avoid GPU/texture limits at high zoom. C
 sudo apt install libvips libvips-tools
 ```
 
+### Windows with winget install --id=libvips.libvips -e
+```bash
+winget install --id=libvips.libvips -e
+```
+
 ## libvips Deep Zoom command
 
 Using [libvips](https://libvips.github.io/libvips/), run this command to create a Deep Zoom tiles from a large JPG:
 
 ```bash 
-vips dzsave public/IMG_7881.jpg public/tiles/IMG_7881 --suffix .jpg
+vips dzsave public/IMG_7881.jpg public/IMG_7881 --suffix ".jpg[Q=95]" --layout zoomify
 ```
 
 ## License
