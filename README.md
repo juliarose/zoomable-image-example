@@ -12,6 +12,10 @@ Large images must be served as tiles to avoid GPU/texture limits at high zoom. C
 2. Output the generated tiles to `public/image`.
 3. Ensure `main.js` points to `public/image` as the tile source.
 
+## Configuring
+
+You can customize the OpenSeadragon viewer options in `main.js` and the page layout in `index.html`.
+
 ## Installing libvips
 
 ### Debian
