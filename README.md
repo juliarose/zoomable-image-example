@@ -6,13 +6,11 @@ View it live <https://juliarose.github.io/zoomable-image-example/>.
 
 ## Using a large JPG (Deep Zoom)
 
-Large images must be served as tiles to avoid GPU/texture limits at high zoom. Convert your JPG to a Deep Zoom tiles and place the outputs in the public folder so Vite can serve them.
+Large images must be served as tiles to avoid GPU/texture limits at high zoom. Convert your JPG to a Deep Zoom tiles and place the outputs in the public directory so Vite can serve them.
 
-1. Generate a Deep Zoom image (`.dzi` + tiles) from your JPG using a tiling tool such as libvips or a Deep Zoom converter.
-2. Put the generated files in:
-	- `public/tiles/image.dzi`
-	- `public/tiles/image_files/` (tile folder created by the tool)
-3. Ensure `main.js` points to the `.dzi` file as the tile source.
+1. Generate a Deep Zoom image from your JPG using a tiling tool such as libvips or a Deep Zoom converter.
+2. Output the generated tiles to `public/image`.
+3. Ensure `main.js` points to `public/image` as the tile source.
 
 ## Installing libvips
 
@@ -21,7 +19,7 @@ Large images must be served as tiles to avoid GPU/texture limits at high zoom. C
 sudo apt install libvips libvips-tools
 ```
 
-### Windows with winget install --id=libvips.libvips -e
+### Windows with winget
 ```bash
 winget install --id=libvips.libvips -e
 ```
@@ -33,6 +31,8 @@ Using [libvips](https://libvips.github.io/libvips/), run this command to create 
 ```bash 
 vips dzsave public/image.jpg public/image --suffix ".jpg[Q=95]" --layout zoomify
 ```
+
+This saves the tiles in the zoomify layout, which is higher quality when zooming in close.
 
 ## License
 

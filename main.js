@@ -15,6 +15,8 @@ window.addEventListener("DOMContentLoaded", () => {
 			height: 1332,
 			tilesUrl: "image/",
 		}],
+		wrapHorizontal: true,
+		wrapVertical: false,
 		maxZoomLevel: 100,
 		maxZoomPixelRatio: 1,
 		minZoomLevel: 0,
