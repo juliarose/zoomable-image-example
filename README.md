@@ -4,6 +4,18 @@ Example static zoomable image site using [OpenSeadragon](https://github.com/open
 
 View it live <https://juliarose.github.io/zoomable-image-example/>.
 
+## Configuration
+
+The site consists of two main files:
+- `index.html` - the HTML structure of the page
+- `main.js` - the JavaScript that initializes OpenSeadragon and configures it to load the image tiles.
+
+## Building and running locally
+1. Clone the repository and navigate to the project directory.
+2. Install dependencies with `npm install`.
+3. Start the development server with `npm run dev`.
+4. Open `http://localhost:5173/zoomable-image-example/` in your browser to see the zoomable image.
+
 ## Using a large JPG (Deep Zoom)
 
 Large images must be served as tiles to avoid GPU/texture limits at high zoom. Convert your JPG to a Deep Zoom tiles and place the outputs in the public directory so Vite can serve them.
@@ -11,10 +23,6 @@ Large images must be served as tiles to avoid GPU/texture limits at high zoom. C
 1. Generate a Deep Zoom image from your JPG using a tiling tool such as libvips or a Deep Zoom converter.
 2. Output the generated tiles to `public/image`.
 3. Ensure `main.js` points to `public/image` as the tile source.
-
-## Configuring
-
-You can customize the OpenSeadragon viewer options in `main.js` and the page layout in `index.html`.
 
 ## Installing libvips
 
